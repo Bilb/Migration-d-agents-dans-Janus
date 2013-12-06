@@ -13,7 +13,7 @@ Question :
 migrationWaiting est une map<AgentAddress, maxtimeout>
 
 
-Kernel -> migrate (Agent agent, AgetnAddress destinationKernel):
+Kernel -> migrate (Agent agent, AgentAddress destinationKernel):
 ================================================================
 DEBUT
 	SI le kernel de destination et d'arrivée sont les mêmes OU
@@ -26,7 +26,7 @@ DEBUT
 		Lancer la périodicTask si elle n'est pas déjà lancée (TODO : checker si c'est possible de tester si elle est déjà lancée)
 		L'envoyer au kernel destination
 	FINSI
-FIN	
+FIN
 	
 
 

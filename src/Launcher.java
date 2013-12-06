@@ -6,12 +6,12 @@ import org.janusproject.kernel.network.jxse.agent.JxtaJxseKernelAgentFactory;
 public class Launcher {
 
 	public static void main(String[] args) {
-		// The following line permits to create a JXTA
-		// standard-edition kernel.
-		Kernels.setPreferredKernelFactory(new JxtaJxseKernelAgentFactory());
-		Kernel kernel = Kernels.get(true);
-		TestAgent agent = new TestAgent();
-		kernel.launchHeavyAgent(agent,"agent1");		
 
+		Kernels.setPreferredKernelFactory(new JxtaJxseKernelAgentFactory());
+		Kernel kernel = Kernels.get(true, "test Platofrm janus network"); //$NON-NLS-1$
+		
+		
+		MigrationAgent agent = new MigrationAgent();
+		kernel.launchLightAgent(agent,"agent1"); //$NON-NLS-1$
 	}
 }
