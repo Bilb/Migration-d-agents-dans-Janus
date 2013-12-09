@@ -60,7 +60,7 @@ DEBUT
 				L'ajouter au thread d'execution du kernel Agent (en pause tjrs à ce moment là normalement)
 				Envoyer MigrationSuccessMessage(adresse de l'agent) à l'émmeteur de msg
 			catch:
-				Envoyer MigrationErrorMessage(adresse de l'agent, String raison) à l'emmeteur de msg
+				Envoyer MigrationErrorMessage(adresse de l'agent) à l'emmeteur de msg //TODO
 		
 		SINON SI msg de type MigrationSuccessMessage ALORS
 			SI migrationWaiting contient msg.agentAddress ALORS
