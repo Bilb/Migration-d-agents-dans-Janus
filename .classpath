@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="janus/janus/janus-kernel/kernel/src/test/resources"/>
+	<classpathentry kind="src" path="janus/janus/janus-kernel/network/jxse/src/main/resources"/>
+	<classpathentry kind="src" path="janus/janus/janus-kernel/kernel/src/main/resources"/>
 	<classpathentry kind="src" path="janus/janus/janus-kernel/network/jxse/src/main/java"/>
 	<classpathentry kind="src" path="janus/janus/janus-kernel/network/network-base/src/main/java"/>
 	<classpathentry kind="src" path="janus/janus/janus-kernel/kernel/src/main/java"/>

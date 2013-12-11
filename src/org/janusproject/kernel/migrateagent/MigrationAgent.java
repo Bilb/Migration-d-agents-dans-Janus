@@ -6,16 +6,13 @@ import org.janusproject.kernel.status.Status;
 
 public class MigrationAgent extends Agent{
 
-	//TODO
-	private int test = 182;
-
 	private AgentAddress toMigrate;
 
 	public MigrationAgent(AgentAddress toMigrate) {
 		this.toMigrate = toMigrate;
 	}
-	
-	
+
+
 	/**
 	 * 
 	 */
@@ -30,39 +27,19 @@ public class MigrationAgent extends Agent{
 	@Override
 	public Status live() {
 
-		if(this.count< 10) {
-			System.out.println("" + this.count + "  "+ getAddress() + "" +" Je suis sur " + getKernelContext().getKernelAgent());  //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-			
-			if(this.count == 9) {
-				//AgentAddress destination = getKernelContext().getKernelAgent(); //same kernel
-				
-				System.out.println(""+this.count+ " demande de migration de " + getKernelContext().getKernelAgent() + " à " + this.toMigrate); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
-				migrate(this.toMigrate);
-			}
+		if(this.count%300 == 0) {
+			System.out.println("Je suis sur:  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ 
 		}
-		
-		if(this.count%3000 == 0) {
-			System.out.println("current kernel  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ //$NON-NLS-2$
+
+		if(this.count == 2) {
+			System.out.println("Demande de migration de " + getKernelContext().getKernelAgent() + " à " + this.toMigrate);//$NON-NLS-1$ //$NON-NLS-2$ 
+			migrate(this.toMigrate);
 		}
-		
-		
 		this.count++;
-
-		/*SizedIterator<AgentAddress> it = getKernelContext().getKernel().getRemoteKernels();
-		AgentAddress address;
-		System.out.println("size:" + it.rest());
-		while(it.hasNext()) {
-			address = it.next();
-			System.out.println("address :" +address.getUUID());
-		}*/
-
 
 		return super.live();
 	}
 
 
-	
-	public int getTest() {
-		return test;
-	}
+
 }
