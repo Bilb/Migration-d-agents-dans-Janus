@@ -15,9 +15,9 @@ public class Launcher  {
 		LoggerUtil.setGlobalLevel(Level.SEVERE);
 		
 		Kernels.setPreferredKernelFactory(new JxtaJxseKernelAgentFactory());
-		Kernel kernel = Kernels.create(true, "jxta demo migrate janus"); //$NON-NLS-1$
+		Kernel kernel = Kernels.create(false, "jxta demo migrate janus"); //$NON-NLS-1$
 		
-		Kernel kernel2 = Kernels.create(true, "jxta demo migrate janus"); //$NON-NLS-1$
+		Kernel kernel2 = Kernels.create(false, "jxta demo migrate janus"); //$NON-NLS-1$
 		
 		
 		MigrationAgent agent = new MigrationAgent(kernel2.getAddress());
