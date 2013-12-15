@@ -6,11 +6,15 @@ import org.janusproject.kernel.status.Status;
 
 public class MigrationAgent extends Agent{
 
-	private AgentAddress toMigrate;
+	public AgentAddress toMigrate;
+
+	public int test = 5;
 
 	public MigrationAgent(AgentAddress toMigrate) {
 		this.toMigrate = toMigrate;
 	}
+
+
 
 
 	/**
@@ -27,14 +31,19 @@ public class MigrationAgent extends Agent{
 	@Override
 	public Status live() {
 
+
+		//System.out.println("living"); //$NON-NLS-1$
 		if(this.count%300 == 0) {
-			System.out.println("Je suis sur:  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ 
+			System.out.println(this + " ---- Je suis sur:  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ 
+		}
+		if(!hasMigrated()) {
+			if(this.count == 2) {
+				System.out.println("Demande de migration de " + getKernelContext().getKernelAgent() + " à " + this.toMigrate);//$NON-NLS-1$ //$NON-NLS-2$
+				migrate(this.toMigrate);
+			}
 		}
 
-		if(this.count == 2) {
-			System.out.println("Demande de migration de " + getKernelContext().getKernelAgent() + " à " + this.toMigrate);//$NON-NLS-1$ //$NON-NLS-2$ 
-			migrate(this.toMigrate);
-		}
+
 		this.count++;
 
 		return super.live();
