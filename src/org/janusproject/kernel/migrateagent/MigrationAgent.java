@@ -1,6 +1,7 @@
 package org.janusproject.kernel.migrateagent;
 import org.janusproject.kernel.address.AgentAddress;
 import org.janusproject.kernel.agent.Agent;
+import org.janusproject.kernel.agent.Kernels;
 import org.janusproject.kernel.status.Status;
 
 
@@ -10,8 +11,8 @@ public class MigrationAgent extends Agent{
 
 	public int test = 5;
 
-	public MigrationAgent(AgentAddress toMigrate) {
-		this.toMigrate = toMigrate;
+	public MigrationAgent() {
+		
 	}
 
 
@@ -30,9 +31,8 @@ public class MigrationAgent extends Agent{
 
 	@Override
 	public Status live() {
+		this.toMigrate = Kernels.getOtherRandomKernel(getKernelContext().getKernelAgent());
 
-
-		//System.out.println("living"); //$NON-NLS-1$
 		if(this.count%300 == 0) {
 			System.out.println(this + " ---- Je suis sur:  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ 
 		}
