@@ -57,6 +57,7 @@ public class NetworkFakeNetworkAdapter implements NetworkAdapter {
 	 */
 	static final Set<NetworkFakeNetworkAdapter> ALL_ADAPTERS = new TreeSet<NetworkFakeNetworkAdapter>(
 			new Comparator<NetworkFakeNetworkAdapter>() {
+				@SuppressWarnings("null")
 				@Override
 				public int compare(
 						NetworkFakeNetworkAdapter o1,

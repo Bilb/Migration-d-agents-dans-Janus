@@ -33,7 +33,7 @@ public class MigrationAgent extends Agent{
 	public Status live() {
 		this.toMigrate = Kernels.getOtherRandomKernel(getKernelContext().getKernelAgent());
 
-		if(this.count%300 == 0) {
+		if(this.count%30000 == 0) {
 			System.out.println(this + " ---- Je suis sur:  " + getKernelContext().getKernelAgent()); //$NON-NLS-1$ 
 		}
 		if(!hasMigrated()) {
