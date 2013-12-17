@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import org.janusproject.kernel.Kernel;
 import org.janusproject.kernel.agent.Kernels;
 import org.janusproject.kernel.logger.LoggerUtil;
-import org.janusproject.kernel.migrateagent.MigrationAgent;
+import org.janusproject.kernel.network.fakenetwork.NetworkFakeKernelAgentFactory;
 
 
 public class Launcher  {
@@ -14,7 +14,6 @@ public class Launcher  {
 	
 	public static void main(String[] args) {
 		LoggerUtil.setGlobalLevel(Level.FINE);
-		
 		Kernels.setPreferredKernelFactory(new NetworkFakeKernelAgentFactory());
 
 		Kernel kernel = Kernels.create(false, APPLICATION_NAME);
