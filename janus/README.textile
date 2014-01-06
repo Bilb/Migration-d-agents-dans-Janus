@@ -1,0 +1,87 @@
+h1. Janus Multiagent Platform
+
+Janus is a multi-agent platform fully implemented in Java 1.6. Janus enables developers to quickly create web, enterprise and desktop multiagent-based applications. It provides a comprehensive set of features to develop, run, display and monitor multiagent-based applications. Janus-based applications can be distributed across a network. Janus could be used as an agent-oriented platform, an organizational platform, and/or an holonic platform. Indeed Janus is built upon the "CRIO organizational metamodel":http://www.aspecs.org/CRIO in which the concepts of role and organization are first-class entities. It also natively manages the concept of recursive agents and holon.
+
+Janus is free for non-commercial use *only* and distributed under the terms of the "GPLv3.":http://www.janus-project.org/Licensing:Janus
+We also provide a range of commercial licenses that allow to integrate Janus into other commercial products or projects without any obligation to publish the source code of your derivative work on the Internet, as the GPLv3 normally requires.
+
+Janus is jointly developed by the multiagent teams of the "Laboratoire Systèmes et Transports":http://www.multiagent.fr (France) and the "Grupo de Investigación en Tecnologías Informáticas Avanzadas.":http://citat.org.ar (Argentina)
+
+h1. Issues
+
+Issues related to the Janus platform are tracked by our "JIRA website.":http://www.janus-project.org/jira
+You must use this issue tracker to report and follow your issues.
+
+h1. Building the Janus Platform from CLI with Maven
+
+h2. Requirements
+
+* Java Development Toolkit (JDK) 1.6, but not the version 1.7 if you want to create an Android application.
+* Maven 3.0 or higher.
+
+h2. Compilation on Windows
+
+# Open a DOS terminal
+# Go into the directory where the source code is located (inside which this README file is, also).
+# Type the following command line: @.\build@
+
+h2. Compilation on Unix
+
+# Open a Shell terminal
+# Go into the directory where the source code is located (inside which this README file is, also).
+# Type the following command line: @sh ./build.sh@
+
+h1. Cleaning the Directories from CLI
+
+h2. Cleaning on Windows
+
+# Open a DOS terminal
+# Go into the directory where the source code is located (inside which this README file is, also).
+# Type the following command line: @.\clean@
+
+h2. Cleaning on Unix
+
+# Open a Shell terminal
+# Go into the directory where the source code is located (inside which this README file is, also).
+# Type the following command line: @sh ./clean.sh@
+
+h1. Using Janus in a Maven project
+
+To use the Janus platform inside your Maven project, you must:
+
+Add a dependency to the Janus platform (replace @X.X@ by the correct version number):
+
+<dependency>
+    <groupId>org.janus-project.kernel</groupId>
+    <artifactId>kernel</artifactId>
+    <version>X.X</version>
+</dependency>
+
+
+Add the Maven repositories of Janus:
+
+<repositories>
+    <repository>
+        <id>org.janus-project.maven</id>
+        <name>Janus Project Snapshots</name>
+        <url>http://www.janus-project.org/maven/</url>
+    </repository>
+</repositories>
+<pluginRepositories>
+    <pluginRepository>
+        <id>org.janus-project.maven</id>
+        <name>Janus Project Snapshots</name>
+        <url>http://www.janus-project.org/maven/</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </pluginRepository>
+</pluginRepositories>
+
+
+h1. Using Janus outside the Maven tools
+
+To use the Janus platform outside the Maven tools, you must download the Jar file that is containing the Janus platform and its dependencies (@janus-kernel-X.X-with-dependencies.jar@) from the "download page of Janus":http://www.janus-project.org/Download
+
+Then, you may add the downloaded Jar file into the dependencies of your Java project.
+
